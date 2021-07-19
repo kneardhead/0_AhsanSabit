@@ -1,0 +1,18 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{fonttest}
+\RequirePackage{fontspec}
+
+\newif\if@fontA\@fontAfalse
+
+\DeclareOption{fontA}{\@fontAtrue}
+
+\ProcessOptions\relax
+
+\if@fontA
+\usepackage{fontspec}
+\setmainfont{Inconsolata}
+\setsansfont{CMU Serif}
+\setmonofont{Inconsolata}
+\fi
+
+\endinput

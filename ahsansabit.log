@@ -1,0 +1,33 @@
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2021.7.13)  20 JUL 2021 04:13
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ahsansabit.sty
+(./ahsansabit.sty
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-07-17>
+
+LaTeX Warning: You have requested package `',
+               but the package provides `ahsansabit'.
+
+Package: ahsansabit 
+
+! LaTeX Error: \usepackage before \documentclass.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \usepackage{
+                xcolor}
+? X
+ 
+Here is how much of TeX's memory you used:
+ 18 strings out of 479712
+ 460 string characters out of 5891447
+ 248267 words of memory out of 5000000
+ 17345 multiletter control sequences out of 15000+600000
+ 535088 words of font info for 29 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 12i,0n,15p,70b,14s stack positions out of 5000i,500n,10000p,200000b,80000s
+No pages of output.

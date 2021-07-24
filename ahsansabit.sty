@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{ahsansabit}	
+\ProvidesPackage{ahsansabit}
 
 
 \usepackage{xcolor}
@@ -36,7 +36,7 @@
 \definecolor{GunaBlack}       {HTML} {161c23}
 \definecolor{BestBlackBright} {HTML} {22222a}
 
-% Cream Color 
+% Cream Color
 \definecolor{Rosewater}  {HTML} {d8a7b1}
 \definecolor{Spearmint}  {HTML} {b6e2d3}
 \definecolor{Cream}      {HTML} {fae8e0}
@@ -86,7 +86,7 @@
 \definecolor{G bg2}           {HTML}{504945}
 \definecolor{G bg3}           {HTML}{665c54}
 
-\definecolor{G gray}            {HTML}{928374} 
+\definecolor{G gray}            {HTML}{928374}
 
 \definecolor{G fg1}             {HTML}{ebdbb2}
 \definecolor{G fg2}             {HTML}{a89984}
@@ -124,15 +124,15 @@
     \colorlet{pageC}{G bg}
     \colorlet{fgC}{G fg1}
 
-    \colorlet{thmC}{G fg2} 
+    \colorlet{thmC}{G fg2}
     \colorlet{probC}{G blue}
     \colorlet{defC}{G fg2}
     \colorlet{solC}{G fg2}
-                    
+
     \colorlet{thmBgC}{G bg2}
     \colorlet{probBgC}{G bg1}
     \colorlet{defBgC}{G bg2}
-                    
+
     \colorlet{urlC}{G blue}
     \colorlet{linkC}{G dirtblue}
     \colorlet{fileC}{G yellow}
@@ -149,7 +149,7 @@
     \colorlet{solC}{fgC}
 
     \colorlet{thmBgC}{BestBlackBright}
-    \colorlet{probBgC}{BestBlack}
+    \colorlet{probBgC}{BestBlack!98!Teal}
     \colorlet{defBgC}{BestBlackBright}
 
     \colorlet{urlC}{NordBrightCyan}
@@ -254,9 +254,17 @@
     \colorlet{impC}{NordBrightBlue!80!fgC}
 }
 
+%option for font
+\newif \iffont \fontfalse
+\DeclareOption {fonts} {\fonttrue}
+
+
 
 
 \ProcessOptions\relax
+
+
+
 
 \usepackage{pagecolor}
 \pagecolor{pageC} \color{fgC}
@@ -270,24 +278,51 @@
 \setlength\parindent{0pt}
 \setlength\parskip{10pt}
 
+
+
+%font support
+\iffont
+  \usepackage[T1]{fontenc}
+  \usepackage{fontspec}
+
+
+  \setsansfont{CMU Sans Serif} [Scale=MatchUppercase]
+
+  \setmonofont{Share Tech Mono} [Scale=MatchLowercase]
+
+  \setmainfont{Ubuntu} [Scale=MatchLowercase]
+
+  \newfontfamily\Share [Ligatures=TeX]{Share}
+  \newfontfamily\Titillium [Ligatures=TeX]{Titillium Web}
+  \newfontfamily\Inconsolata [Ligatures=TeX]{inconsolata}
+
+\else
+
+\usepackage{lmodern}
+
+\fi
+
+
+
+
 % Environment for Problems
 \declaretheoremstyle[
-	headfont=\bfseries\color{probC},
+	headfont=\color{probC},
 	headpunct={.},
 	postheadspace={7pt},
 	spaceabove=12pt,
 	spacebelow=12pt,
 	notebraces={(}{)},
 	notefont=\color{probC},
-	]{problemstyle} 
+	]{problemstyle}
 
 \tcolorboxenvironment{problem}{
 	tile, breakable, colback=probBgC, colframe=probBgC, coltext=fgC,
-	left=0.2em,before skip=12pt, after skip=30pt,}
+	left=0.2em,before skip=12pt, after skip=20pt,}
 \declaretheorem[style=problemstyle]{problem}
 \newtheorem*{problem*}{Problem}
 
-\newcommand{\pr}[1]{ 
+\newcommand{\pr}[1]{
     \begin{problem}
         #1
     \end{problem}
@@ -295,31 +330,104 @@
 
 
 
+%note environment
+\declaretheoremstyle[
+headfont=\bfseries\color{fgC},
+    headpunct={ },
+    postheadspace={5pt},
+    spaceabove=5pt,
+    spacebelow=5pt,
+    notebraces={ }{ },
+    notefont=\color{cyan},
+    ]{notestyle}
+
+\tcolorboxenvironment{note}{
+    tile, breakable, colback=pageC, colframe=probBgC, coltext=defC,
+left=1em, before skip= 12pt, after skip = 22pt,}
+
+\declaretheorem[style=notestyle, numbered=no]{note}
+\newtheorem{note*}{Note}
+
+\newcommand{\nt}[1]{
+    \begin{note} \begin{small}
+        #1
+    \end{small} \end{note}
+}
 
 
 
 
+%environment for solution
+\declaretheoremstyle[
+headfont=\bfseries\color{solC},
+notebraces={[}{]},
+notefont=\normalfont,
+headpunct={. },
+spaceabove=4pt,
+spacebelow=10pt,
+qed=\qedsymbol,
+% bodyfont=\color{solC!80!pageC},
+]{solutionstyle}
+
+\declaretheorem[style=solutionstyle, numbered=no]{solution}
+
+\tcolorboxenvironment{solution}{
+          coltext=fgC!96!pageC, tile, breakable, colback=pageC,
+          top=0pt, left=.7em, right=.7em,
+          before skip=0pt,after skip=35pt,borderline west={.1em}{0pt}{solC},
+      }
+
+\newtheorem{solution*}{Solution}
+
+\newcommand{\solu}[1]{
+\begin{solution}
+#1
+\end{solution}}
+
+
+
+% Environment for Derivation
+\declaretheoremstyle[
+	headfont=\bfseries\Titillium\color{G aqua},
+	headpunct={},
+	postheadspace={5pt},
+	spaceabove=12pt,
+	spacebelow=12pt,
+	notebraces={(}{)},
+	notefont=\color{probC},
+	]{derivationstyle}
+
+\tcolorboxenvironment{derivation}{
+	tile, breakable, colback=probBgC!90!pageC, colframe=probBgC, coltext=fgC,
+	left=0.2em,before skip=12pt, after skip=0pt,
+borderline west={0.1em}{0pt}{G aqua},
+borderline south={0.05em}{30pt}{gray!50!pageC}
+  }
+
+
+\declaretheorem[style=derivationstyle, numbered=no]{derivation}
+\newtheorem*{derivation*}{Derivation}
+
+
+\newenvironment{derivationmath}{
+\tcolorbox[{tile, breakable,
+before skip=0pt,after skip=20pt,
+left=0.4em,coltext=fgC, colback=probBgC!60!pageC,
+borderline west={0.1em}{0pt}{cyan}}]
+}
+{\endtcolorbox}
+
+\newcommand{\derive}[2]{%
+\begin{derivation}
+{\Titillium
+    #1 - }
+\end{derivation}
+\begin{derivationmath}
+    #2
+\end{derivationmath}
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+%environment for idea

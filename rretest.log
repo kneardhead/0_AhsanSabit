@@ -1,9 +1,9 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2021.7.13)  19 AUG 2021 12:15
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/Debian) (preloaded format=xelatex 2021.7.13)  19 AUG 2021 12:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**testfile.tex
-(./testfile.tex
+**rretest.tex
+(./rretest.tex
 LaTeX2e <2020-02-02> patch level 5
 L3 programming layer <2020-07-17>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -882,8 +882,8 @@ Package thmtools Info: Key `qed' (with value `\qedsymbol ')
 (thmtools)             that uses `style=solutionstyle' on input line 368.
 \c@solution*=\count310
 )
-(./testfile.aux)
-\openout1 = `testfile.aux'.
+(./rretest.aux)
+\openout1 = `rretest.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
@@ -1005,14 +1005,14 @@ LaTeX Font Info:    Font shape `TU/CMUSerif(0)/m/n' will be
 LaTeX Font Info:    Font shape `TU/CMUSansSerif(0)/m/n' will be
 (Font)              scaled to size 10.77873pt on input line 84.
  [4]
-(./testfile.aux) ) 
+(./rretest.aux) ) 
 Here is how much of TeX's memory you used:
- 22373 strings out of 479712
- 516249 string characters out of 5891447
- 838719 words of memory out of 5000000
- 39114 multiletter control sequences out of 15000+600000
+ 22371 strings out of 479712
+ 516204 string characters out of 5891447
+ 838630 words of memory out of 5000000
+ 39112 multiletter control sequences out of 15000+600000
  544913 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 80i,5n,123p,833b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 80i,5n,123p,832b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on testfile.pdf (4 pages).
+Output written on rretest.pdf (4 pages).

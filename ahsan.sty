@@ -102,10 +102,10 @@
 
 % latexbangla support
 \ifahsanbangla
-    % \usepackage[fancythm, bangla]{tcbs} 
+    % \usepackage[fancythm, bangla]{tcbs}
     \usepackage[feature=1]{latexbangla_new}
 
-    \ahsanfigstrue 
+    \ahsanfigstrue
     \ahsansetupfalse
 \else
 \usepackage{enumitem}
@@ -169,7 +169,7 @@
         \renewcommand*{\sectionmark}[1]{\markboth{#1}{}}
         \renewcommand*{\subsectionmark}[1]{\markright{#1}}
         \pagestyle{plain}
-    \else 
+    \else
         \usepackage[a4paper, margin=1in]{geometry}
     \fi
 
@@ -200,11 +200,11 @@
     % font specs
     \ifahsanfont
         \usepackage{fontspec}
-        \usepackage[T1]{fontenc}
+        %\usepackage[T1]{fontenc}
 
         \setsansfont{CMU Sans Serif}  [Scale=MatchUppercase]
         \setmonofont{Share Tech Mono} [Scale=MatchLowercase]
-        \setmainfont{CMU Serif}       [Scale=MatchLowercase]
+        \setmainfont{CMU Sans Serif}       [Scale=MatchLowercase]
 
         \newfontfamily\Share     [Ligatures=TeX, Scale=MatchUppercase]{Share}
         \newfontfamily\Titillium [Ligatures=TeX, Scale=MatchLowercase]{Titillium Web}
@@ -212,7 +212,7 @@
         \usepackage[T1]{fontenc}
         \usepackage{sansmathfonts}
         \usepackage{inconsolata}
-      
+
         \DeclareUnicodeCharacter{2009}{ }
         \DeclareUnicodeCharacter{2061}{ }
 
@@ -255,7 +255,7 @@
     \ifahsanthm
         \ifahsanfancythm
             \ifahsansecthm
-                \usepackage[secthm, fancythm]{tcbs} 
+                \usepackage[secthm, fancythm]{tcbs}
             \else
                 \usepackage[fancythm]{tcbs}
                 \newcommand{\mysection}[1]{
@@ -278,7 +278,7 @@
         \hypersetup{
             colorlinks=true,
             linkcolor=linkC,
-            filecolor=fileC,      
+            filecolor=fileC,
             urlcolor=urlC,
         }
     \fi
